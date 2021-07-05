@@ -67,7 +67,7 @@ SamplesInfo <- unique(SamplesInfo)
 rownames(SamplesInfo) <- SamplesInfo$sample_id
 
 
-SamplesInfo[,"status"] <- ifelse(SamplesInfo[,"case_control"]=="Case",1,ifelse(SamplesInfo[,"case_control"]=="Control",1,-1))
+SamplesInfo[,"status"] <- ifelse(SamplesInfo[,"case_control"]=="Case",1,ifelse(SamplesInfo[,"case_control"]=="Control",0,-1))
 SamplesInfo[,"time"] <- as.numeric(SamplesInfo[,"inv_time"])/365
 # SamplesInfo[,"time"] <- as.numeric(SamplesInfo[,"follow_up"])/365
 
